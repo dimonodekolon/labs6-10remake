@@ -1,0 +1,43 @@
+﻿<Window x:Class="lab_10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Label Content="Введите выражение:" VerticalAlignment="Center"/>
+            <TextBox Name="ExpressionTextBox" Width="180" Height="30" VerticalAlignment="Center"/>
+
+            <Label Content="Начало" VerticalAlignment="Center"/>
+            <TextBox Name="StartTextBox" Width="50" Height="25"/>
+
+            <Label Content="Конец" VerticalAlignment="Center"/>
+            <TextBox Name="EndTextBox" Width="50" Height="25"/>
+
+            <Label Content="Шаг" VerticalAlignment="Center"/>
+            <TextBox Name="StepTextBox" Width="50" Height="25" Text="1"/>
+
+            <Button Content="Обновить" Width="100" Height="30" Click="UpdateButton_Click"/>
+        </StackPanel>
+
+        <Canvas Grid.Row="1" Name="GraphCanvas" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content="Масштаб" VerticalAlignment="Center"/>
+            <Slider Name="ScaleSlider" Minimum="10" Maximum="100" Value="30" Width="200" ValueChanged="Slider_ValueChanged"/>
+            <Label Content="Горизонталь" VerticalAlignment="Center"/>
+            <Slider Name="HorizontalSlider" Minimum="-400" Maximum="400" Value="0" Width="200" ValueChanged="Slider_ValueChanged"/>
+            <Label Content="Вертикаль" VerticalAlignment="Center"/>
+            <Slider Name="VerticalSlider" Minimum="-300" Maximum="300" Value="0" Width="200" ValueChanged="Slider_ValueChanged"/>
+        </StackPanel>
+    </Grid>
+</Window>
